@@ -7,7 +7,7 @@ cloverMerchants = [
   }
 ];
 
-module.exports.searchClover = (query) => {
+module.exports.searchClover = function(query) {
   var searchResults = [];
   for (merchant in cloverMerchants) {
     var result = {};
