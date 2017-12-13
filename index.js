@@ -6,7 +6,7 @@ var searchClover = require('./searchClover.js')
 
 io.on('connection', (socket) => {
   console.log("Connected to:", socket.id);
-  socket.on('search', (value) => {
+  socket.on('search', (query) => {
     // request.get(
     //   'https://apisandbox.dev.clover.com/v3/merchants/' + '8T8VYFD236V4W' + '/items?=access_token=' + '37231e0b-b510-6a35-076d-7376cc13e791',
     //   (err, res, body) => {
