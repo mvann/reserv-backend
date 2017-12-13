@@ -2,6 +2,7 @@ var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var request = require('request');
+var searchClover = require('./searchClover')
 
 io.on('connection', (socket) => {
   console.log("Connected to:", socket.id);
@@ -12,6 +13,8 @@ io.on('connection', (socket) => {
     //     socket.emit('searchResult', JSON.parse(body));
     //   }
     // );
+    let searchResult = searchClover(query);
+    console.log(searchResult);
     socket.emit(
       'searchResult',
       [
@@ -51,7 +54,6 @@ io.on('connection', (socket) => {
     );
   });
 });
-
 
 const port = 8000;
 http.listen(port, () => {
