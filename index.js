@@ -13,7 +13,7 @@ io.on('connection', (socket) => {
     //     socket.emit('searchResult', JSON.parse(body));
     //   }
     // );
-    let searchResult = searchClover(query);
+    var searchResult = searchClover(query);
     console.log(searchResult);
     socket.emit(
       'searchResult',
