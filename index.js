@@ -2,7 +2,7 @@ var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var request = require('request');
-var searchClover = require('./searchClover.js')
+var searchClover = require('./searchClover.js').searchClover;
 
 io.on('connection', (socket) => {
   console.log("Connected to:", socket.id);
