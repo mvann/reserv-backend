@@ -8,9 +8,9 @@ cloverMerchants = [
 ];
 
 module.exports.searchClover = (query) => {
-  let searchResults = [];
+  var searchResults = [];
   for (merchant in cloverMerchants) {
-    let result = {};
+    var result = {};
     request.get(
       'https://apisandbox.dev.clover.com/v3/merchants/' + merchant.id + '?=access_token=' + merchant.token,
       (err, res, body) => {
