@@ -29,7 +29,7 @@ module.exports.searchClover = function(query) {
         result.orders = JSON.parse(body);
       }
     );
-    searchResults.append(result);
+    searchResults.push(result);
   }
   return (searchResult);
 }
